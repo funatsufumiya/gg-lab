@@ -49,12 +49,38 @@ fn vec2f(x int, y int) vec.Vec2[f32] {
 	return vec.vec2(f32(x), f32(y))
 }
 
+// // Get a matrix translated by a vector w
+// fn (x Mat4) translate(w Vec4) Mat4 {
+// 	// vfmt off
+// 	return unsafe { 
+// 		Mat4{ e: [
+// 			x.e[0],             x.e[1],             x.e[2 ],            x.e[3 ],
+// 			x.e[4],             x.e[5],             x.e[6 ],            x.e[7 ],
+// 			x.e[8],             x.e[9],             x.e[10],            x.e[11],
+// 			x.e[12] + w.e[0],   x.e[13] + w.e[1],   x.e[14] + w.e[2],   x.e[15],
+// 		]!}
+// 	}
+// 	// vfmt on
+// }
+
 fn (mut app App) draw() {
+	p0 := vec2f(0, 0)
 	p := vec2f(app.gg.mouse_pos_x, app.gg.mouse_pos_y)
 
 	app.mat = m4.unit_m4()
-	v := m4.mul_vec(app.mat.transpose(), to_vec4(p))
+	app.mat = app.mat.translate(to_vec4(p))
+
+	// println(app.mat)
+	// println("----")
+
+	// println(to_vec4(p0))
+	// println("----")
+
+	v := m4.mul_vec(app.mat.transpose(), to_vec4(p0))
 	p2 := to_vec2i(v)
+
+	// println(v)
+	// println("----")
 
 	app.gg.draw_text_def(p2.x, p2.y, 'hello world!')
 }
