@@ -17,7 +17,7 @@ fn main() {
 		width:         win_width
 		height:        win_height
 		create_window: true
-		window_title:  'Rectangles'
+		window_title:  'Rotate'
 		frame_fn:      frame
 		user_data:     app
 	)
