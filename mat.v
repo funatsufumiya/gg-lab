@@ -1,5 +1,3 @@
-module main
-
 import gg
 import gg.m4
 import math.vec

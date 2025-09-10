@@ -1,5 +1,3 @@
-module main
-
 import gg
 import math.vec
 import sokol.sgl

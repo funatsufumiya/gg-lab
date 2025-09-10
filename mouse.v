@@ -1,5 +1,3 @@
-module main
-
 import gg
 
 const win_width = 600
