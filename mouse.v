@@ -32,7 +32,7 @@ fn (app &App) draw() {
 	x := app.gg.mouse_pos_x
 	y := app.gg.mouse_pos_y
 
-	app.gg.draw_text_def(-10 + x,-20 + y, 'hello world!')
-	app.gg.draw_rect_filled(10 + x, 10 + y, 40, 40, gg.blue)
-	app.gg.draw_rect_empty(5 + x, 5 + y, 50, 50, gg.black)
+	app.gg.draw_text_def(x - 10,y - 20, 'hello world!')
+	app.gg.draw_rect_filled(x + 10, y + 10, 40, 40, gg.blue)
+	app.gg.draw_rect_empty(x + 5, y + 5, 50, 50, gg.black)
 }
