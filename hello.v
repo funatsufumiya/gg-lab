@@ -29,7 +29,8 @@ fn frame(mut app App) {
 }
 
 fn (mut app App) draw() {
-	app.gg.draw_text_def(10, 10, 'hello world!')
-	app.gg.draw_rect_filled(30, 30, 40, 40, gg.blue)
-	app.gg.draw_rect_empty(25, 25, 50, 50, gg.black)
+	g := app.gg
+	g.draw_text_def(10, 10, 'hello world!')
+	g.draw_rect_filled(30, 30, 40, 40, gg.blue)
+	g.draw_rect_empty(25, 25, 50, 50, gg.black)
 }

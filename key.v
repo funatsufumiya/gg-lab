@@ -29,11 +29,13 @@ fn frame(mut app App) {
 }
 
 fn (mut app App) draw() {
-	if app.gg.is_key_down(gg.KeyCode.space) {
-		app.gg.draw_text_def(10, 110, 'space key press')
-		app.gg.draw_rect_filled(10, 10, 100, 100, gg.blue)
+	mut g := app.gg
+	
+	if g.is_key_down(gg.KeyCode.space) {
+		g.draw_text_def(10, 110, 'space key press')
+		g.draw_rect_filled(10, 10, 100, 100, gg.blue)
 	}else{
-		app.gg.draw_text_def(10, 110, 'space key release')
-		app.gg.draw_rect_empty(10, 10, 100, 100, gg.black)
+		g.draw_text_def(10, 110, 'space key release')
+		g.draw_rect_empty(10, 10, 100, 100, gg.black)
 	}
 }

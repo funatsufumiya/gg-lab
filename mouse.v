@@ -29,10 +29,12 @@ fn frame(app &App) {
 }
 
 fn (app &App) draw() {
+	g := app.gg
+
 	x := app.gg.mouse_pos_x
 	y := app.gg.mouse_pos_y
 
-	app.gg.draw_text_def(x - 10,y - 20, 'hello world!')
-	app.gg.draw_rect_filled(x + 10, y + 10, 40, 40, gg.blue)
-	app.gg.draw_rect_empty(x + 5, y + 5, 50, 50, gg.black)
+	g.draw_text_def(x - 10,y - 20, 'hello world!')
+	g.draw_rect_filled(x + 10, y + 10, 40, 40, gg.blue)
+	g.draw_rect_empty(x + 5, y + 5, 50, 50, gg.black)
 }

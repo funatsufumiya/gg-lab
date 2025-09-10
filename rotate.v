@@ -1,5 +1,4 @@
 import gg
-import math.vec
 import sokol.sgl
 
 const win_width = 600
@@ -31,8 +30,9 @@ fn frame(mut app App) {
 }
 
 fn (mut app App) draw() {
-	r := app.gg.mouse_pos_x
-	sgl.translate(100, 100, 0)
+	g:= app.gg
+	r := g.mouse_pos_x
+	sgl.translate(200, 200, 0)
 	sgl.rotate(sgl.rad(r), 0, 0, 1)
-	app.gg.draw_text_def(0, 0, 'hello world!')
+	g.draw_text_def(0, 0, 'hello world!')
 }
